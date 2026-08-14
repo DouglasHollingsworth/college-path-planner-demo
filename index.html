@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>College Path Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">STUDENT DECISION SYSTEM</p>
+        <h1>Turn a student profile into a college path.</h1>
+        <p class="sub">Explore majors, compare college fit, surface funding priorities, and compress the plan into the next best action.</p>
+      </div>
+      <div class="hero-card"><span>Framework</span><strong>Profile → Explore → Match → Fund → Plan → Act → Verify</strong></div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="panel-head"><div><p class="eyebrow">STEP 1</p><h2>Student profile</h2></div><button id="sampleBtn" class="ghost" type="button">Load sample</button></div>
+        <form id="plannerForm">
+          <label>Weighted GPA<input id="gpa" type="number" min="0" max="5" step="0.01" required placeholder="4.10" /></label>
+          <label>SAT / equivalent<input id="sat" type="number" min="400" max="1600" required placeholder="1280" /></label>
+          <label>Advanced courses<input id="advanced" type="number" min="0" max="30" required placeholder="8" /></label>
+          <label>Career interest<select id="interest"><option>Engineering / Technology</option><option>Health / Life Sciences</option><option>Business / Entrepreneurship</option><option>Arts / Design</option><option>Public Service</option><option>Undecided / Explore</option></select></label>
+          <label>Preferred environment<select id="environment"><option>Large university</option><option>Mid-size university</option><option>Small college</option><option>No strong preference</option></select></label>
+          <label>Cost sensitivity<select id="cost"><option value="high">Very important</option><option value="medium">Important</option><option value="low">Less important</option></select></label>
+          <label class="wide">What matters most?<textarea id="goals" rows="4" required placeholder="Strong engineering options, internships, manageable cost, and room to explore majors."></textarea></label>
+          <button class="primary wide" type="submit">Build college path</button>
+        </form>
+        <p id="notice" class="notice" aria-live="polite"></p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head"><div><p class="eyebrow">DECISION SUPPORT</p><h2>Path brief</h2></div><span id="readinessBadge" class="badge muted">Waiting</span></div>
+        <div id="emptyState" class="empty">Submit a profile to generate major directions, college-fit bands, funding priorities, and the next best action.</div>
+        <div id="result" hidden>
+          <div class="score-row"><div><span>Readiness</span><strong id="readiness">0</strong></div><div><span>Application posture</span><strong id="posture">—</strong></div></div>
+          <div class="box"><span>Best-fit academic paths</span><div id="majors" class="chips"></div></div>
+          <div class="box"><span>College strategy</span><div id="collegeCards" class="college-list"></div></div>
+          <div class="box"><span>Funding priorities</span><ul id="funding"></ul></div>
+          <div class="box accent"><span>Next best action</span><strong id="nextAction">—</strong><p id="whyAction"></p></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel dashboard">
+      <div class="panel-head"><div><p class="eyebrow">PLAN</p><h2>Application command center</h2></div><button id="resetBtn" class="ghost" type="button">Reset demo</button></div>
+      <div class="metrics"><div><span>Schools tracked</span><strong id="schoolCount">0</strong></div><div><span>Tasks complete</span><strong id="taskCount">0/5</strong></div><div><span>Funding checks</span><strong id="fundingCount">0</strong></div><div><span>Priority</span><strong id="priorityMetric">—</strong></div></div>
+      <div id="taskList" class="tasks"></div>
+      <div class="activity"><span>Decision audit</span><ol id="activityLog"><li>Planner initialized.</li></ol></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
