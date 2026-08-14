@@ -1,43 +1,54 @@
-# College Path Planner Demo
+# Student Launch — Universal Platform Demo
 
-A public, demo-safe college planning system that turns a student profile into a practical path: academic fit, career direction, college strategy, financial-aid priorities, application tasks, and a next-best-action plan.
+Student Launch is a reusable college, career, and postsecondary planning system designed to support many schools from one core application.
 
-## What this demonstrates
+The product model is:
 
-- student profile intake
-- major and career-path exploration
-- college-fit scoring with transparent reasoning
-- reach / target / likely grouping
-- affordability and aid planning prompts
-- scholarship/application task tracking
-- priority compression into the next best action
-- explainable decision support instead of black-box recommendations
+**Student Launch Core + School Configuration**
 
-## Live demo
+The student workflow stays the same while school-specific branding, pathways, official links, local funding context, readiness checks, school codes, languages, and pilot disclaimers are loaded from configuration.
 
-After GitHub Pages is enabled, the site will be available at:
+## Included school editions
 
-`https://douglaskai09.github.io/college-path-planner-demo/`
+- **Universal Student Launch** — generic planning mode for any student or school.
+- **McClure Student Launch** — configured pilot edition for McClure Health & Science High School.
+- **Custom School Setup** — a browser-based configuration screen for creating another school edition without rebuilding the app.
 
-## Public-demo design
+## Core student workflow
 
-This repository uses a fictional student profile and local browser storage. It does not contain private student records or claim to provide official admissions decisions, scholarship eligibility, or financial-aid determinations.
+- student profile and goals
+- GPA, testing, course rigor, and transcript builder
+- school program/pathway exploration
+- career and major Path Scan
+- postsecondary route comparison
+- college/training comparison
+- funding stack and simple net-cost planning
+- mission queue with next-best actions
+- official resource handoff
+- local-browser persistence
 
-The public version uses a transparent deterministic recommendation engine so visitors can inspect how decisions are made. A production version could connect to verified college datasets, scholarship sources, application deadlines, authenticated family/student accounts, and server-side AI analysis.
+## School configuration model
 
-## Decision signature
+A school edition can provide:
 
-**Profile → Explore → Match → Fund → Plan → Act → Verify**
+- school name, short name, district, and state
+- primary/accent colors
+- school/program pathways
+- certifications and local opportunities
+- readiness checklist
+- school code
+- official counseling, district, college/career, graduation, and financial-aid resources
+- supported languages
+- pilot/adoption disclaimer
 
-Every recommendation should answer two questions:
+Custom school configurations are stored locally in the browser in this public demo. A production deployment can move configuration to a secure database and provide role-based administration.
 
-1. Why is this being recommended?
-2. What should the student do next?
+## Privacy and boundaries
 
-## Production path
+The public demo stores student-entered information in the browser. It does not require accounts or send grades to a central student database.
 
-A production implementation could use Next.js, Supabase/PostgreSQL, authenticated student/family workspaces, official data integrations, server-side AI, deadline notifications, document tracking, and source-aware verification.
+Student Launch is a planning layer. It does not replace counselors, transcripts, FAFSA, school/district systems, official college portals, or eligibility decisions.
 
-## Important limitation
+## Portfolio purpose
 
-This is a portfolio demonstration, not an admissions, legal, or financial-aid service. Real-world decisions should be verified against current official college, FAFSA, VA, state, and scholarship sources.
+This demo shows how a one-off school pilot can be converted into a reusable product architecture: one core system, many configured school editions.
